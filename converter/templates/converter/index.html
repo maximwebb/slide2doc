@@ -1,0 +1,24 @@
+{% load static %} 
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static 'converter/style.css' %}" />
+	<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Libertinus+Mono&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="main">
+	<div id="content">
+		<h1 class="title">Slide2Doc<i class="fa-user-chef"></i></h1>
+		<form enctype="multipart/form-data" action="/converter/" method="post" >
+			{% csrf_token %}
+			{{ form }}
+			<!--input type="file" class="button-a button-file"></input-->
+			<!--input type="text" id="student_name" placeholder="Student Name (optional)"></input-->
+			<input type="submit" value="Convert" class="button-submit"> </input>
+		</form>
+	</div>
+</div>
+</body>
+</html>
